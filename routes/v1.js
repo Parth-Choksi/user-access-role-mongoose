@@ -23,5 +23,5 @@ router.put('/update/all/users/data',[Auth.auth, Auth.isAdmin],userController.upd
 router.put('/update/user-details',[Auth.auth, Auth.isAdmin],userController.updateManyUsersDifferentData);
 
 // check user has access to module or not.
-router.get('/check/user/access',[Auth.auth, Auth.isAdmin],userController.checkUserAccessModule)
+router.get('/check/user/access',[Auth.auth],userController.checkUserAccessModule)
 module.exports = router

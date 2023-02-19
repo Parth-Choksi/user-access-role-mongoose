@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "e3271e97-f466-427d-9cfc-215b857a6c66",
+		"name": "User-role-access",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\":\"User1\",\n    \"last_name\":\"Abc\",\n    \"email\":\"user123@gmail.com\",\n    \"password\":\"user123\",\n    \"contact_no\":\"9484848484\",\n    \"role\":\"Employee\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"admin123@gmail.com\",\n    \"password\":\"admin123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User List API for Admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFhYWJiYjg3ZWExOWVhYTYxOGExMiIsImlhdCI6MTY3Njc4MjI4MiwiZXhwIjoxNjc2Nzg5NDgyfQ.zDd2QmsZKw66cDzn9NHisqdpQ5RS_fzhN8nAidhb9cM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/v1/user/list/admin/api?page=1&limit=3&search=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"user",
+						"list",
+						"admin",
+						"api"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "search",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Access Module",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFhYWJiYjg3ZWExOWVhYTYxOGExMiIsImlhdCI6MTY3Njc4MjI4MiwiZXhwIjoxNjc2Nzg5NDgyfQ.zDd2QmsZKw66cDzn9NHisqdpQ5RS_fzhN8nAidhb9cM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"role\":\"Employee\",\n    \"access_modules\":[\"View\",\"Update\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/update/access-module",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"update",
+						"access-module"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Access Module Value",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFhYWJiYjg3ZWExOWVhYTYxOGExMiIsImlhdCI6MTY3Njc4MjI4MiwiZXhwIjoxNjc2Nzg5NDgyfQ.zDd2QmsZKw66cDzn9NHisqdpQ5RS_fzhN8nAidhb9cM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"role\":\"Employee\",\n    \"access_modules\":\"Update\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/delete/access-module/value",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"delete",
+						"access-module",
+						"value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update all user data",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFhYWJiYjg3ZWExOWVhYTYxOGExMiIsImlhdCI6MTY3Njc4MjI4MiwiZXhwIjoxNjc2Nzg5NDgyfQ.zDd2QmsZKw66cDzn9NHisqdpQ5RS_fzhN8nAidhb9cM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"role\":\"Employee\",\n    \"company_address\":\"This is company address updated\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/update/all/users/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"update",
+						"all",
+						"users",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update different user different details",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFhYWJiYjg3ZWExOWVhYTYxOGExMiIsImlhdCI6MTY3Njc4NTAzMCwiZXhwIjoxNjc2NzkyMjMwfQ.8VyHLOYOTW9l4BUutz85LDouZqD_qMNxusJ-8hFeHaI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"users\":[\n        {\n            \"user_id\":\"63f1aa0cb87ea19eaa618a08\",\n            \"updateFields\":{\n                \"last_name\":\"Abc\"\n            }\n        },\n        {\n            \"user_id\":\"63f1abadb87ea19eaa618a26\",\n            \"updateFields\":{\n                \"last_name\":\"doe\"\n            }\n        },\n        {\n            \"user_id\":\"63f1ab5fb87ea19eaa618a1d\",\n            \"role\":\"63f063d97ed2acc4af61ff51\",\n            \"updateFields\":{\n                \"access_modules\":[\"Delete\"]\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/update/user-details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"update",
+						"user-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check User has access to Module",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFhYWJiYjg3ZWExOWVhYTYxOGExMiIsImlhdCI6MTY3Njc5NDA5MCwiZXhwIjoxNjc2ODAxMjkwfQ.ZZNpHTZBQqgX5uStjw26pmlBz7-MlnRHgwLSKe22-20",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"63f1aa0cb87ea19eaa618a08\",\n    \"access_module\":\"View\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/check/user/access",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"check",
+						"user",
+						"access"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
